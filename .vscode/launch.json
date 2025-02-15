@@ -1,0 +1,22 @@
+{
+        // Use IntelliSense to learn about possible attributes.
+        // Hover to view descriptions of existing attributes.
+        // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+        "version": "0.2.0",
+        "configurations": [
+          {
+            "name": "Debug",
+            "cwd": "${workspaceFolder}",
+            "gdbPath": "/opt/st/stm32cubeclt_1.17.0/GNU-tools-for-STM32/bin/arm-none-eabi-gdb",
+            "runToEntryPoint": "main",
+            "executable": "${workspaceFolder}/binux/binux.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "bmp",
+            "interface": "swd",
+            "device": "STM32F446",
+            "BMPGDBSerialPort": "/dev/ttyACM0",
+            },
+          
+        ]
+}

@@ -1,0 +1,20 @@
+{
+        "configurations": [
+          {
+            "name": "libopencm3",
+            "includePath": [
+              "${workspaceFolder}/**",
+              "${workspaceFolder}/libopencm3/**"
+            ],
+            "defines": [
+              "STM32F4"  // Change this to your MCU series, e.g., STM32F1
+            ],
+            "compilerPath": "/usr/bin/arm-none-eabi-gcc",
+            "cStandard": "c23",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "gcc-arm"
+          }
+        ],
+        "version": 4
+      }
+      
