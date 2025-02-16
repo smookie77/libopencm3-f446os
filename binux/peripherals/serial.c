@@ -43,6 +43,9 @@ void serial_init(Serial_t *serial){
         usart_set_parity(serial->usart_handle, serial->parity);
         usart_set_stopbits(serial->usart_handle, serial->stopbits);
 
+        GPIO_setMode(GPIO9 | GPIO10, GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE);
+        gpio_set_af(GPIOA, GPIO_AF7, GPIO9 | GPIO10);
+
         usart_enable(serial->usart_handle);
 }
 
@@ -51,4 +54,9 @@ void serial_print(Serial_t *serial, char *msg){
                 usart_send_blocking(serial->usart_handle, *(msg+i));
         }
 
+}
+
+int _write(int file, char *ptr, int len) {
+        serial_print(DEFAULT_SERIAL, ptr);
+        return len;
 }

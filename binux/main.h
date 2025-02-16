@@ -5,6 +5,7 @@
 #include "delay.h"
 #include "serial.h"
 #include "clock.h"
+#include <stdio.h>
 
 #define BEGIN_DECLS 
 #define END_DECLS

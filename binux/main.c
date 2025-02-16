@@ -7,14 +7,16 @@
 int main(void){
     sys_Init();
     GPIO_setOut(LED_PIN, LED_PORT);
+    serial_init(DEFAULT_SERIAL);
     
+    
+
     uint64_t start_time = sys_getTicks();
     while(1){
-        if(sys_getTicks() - start_time >= 1000){
             GPIO_toggleState(LED_PIN, LED_PORT);
-            start_time = sys_getTicks();
-        }
-
+            printf("Hello World\n\0");
+            serial_print(DEFAULT_SERIAL, "Hello World\n");
+            delay_ms(500);
     }
     
 }

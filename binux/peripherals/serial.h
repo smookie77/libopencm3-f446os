@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include <stddef.h>
+
+#include "gpio.h"
 
 #include "libopencm3/stm32/f4/usart.h"
 #include "libopencm3/stm32/f4/rcc.h"
@@ -19,6 +22,8 @@ typedef struct{
 
 extern Serial_t serial1;
 
+#define DEFAULT_SERIAL (&serial1)
+
 #define DEFAULT_BAUDRATE        115200
 #define DEFAULT_DATABITS        8
 #define DEFAULT_FLOW_CTRL       USART_FLOWCONTROL_NONE
@@ -29,6 +34,7 @@ extern Serial_t serial1;
 void serial_enableClock(uint32_t serial_addr);
 void serial_init(Serial_t *serial);
 void serial_print(Serial_t *serial, char *msg);
+int _write(int file, char *ptr, int len);
 // void serial_println(Serial_t serial_handle);
 // char* serial_scan(Serial_t serial_handle);
 
