@@ -49,14 +49,8 @@ void serial_init(Serial_t *serial){
         usart_enable(serial->usart_handle);
 }
 
-void serial_print(Serial_t *serial, char *msg){
-        for(int i = 0; *(msg+i) != '\0'; i++){
+void serial_print(Serial_t *serial, char *msg, int len){
+        for(int i = 0; i < len; i++){
                 usart_send_blocking(serial->usart_handle, *(msg+i));
         }
-
-}
-
-int _write(int file, char *ptr, int len) {
-        serial_print(DEFAULT_SERIAL, ptr);
-        return len;
 }

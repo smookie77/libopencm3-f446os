@@ -5,11 +5,9 @@
 #include "delay.h"
 #include "serial.h"
 #include "clock.h"
+#include "syscalls.c"
+
 #include <stdio.h>
-
-#define BEGIN_DECLS 
-#define END_DECLS
-
 
 #include "libopencm3/stm32/f4/gpio.h"
 #include "libopencm3/stm32/f4/rcc.h"

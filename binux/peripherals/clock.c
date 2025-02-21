@@ -9,16 +9,16 @@ int CPUFrequency = DEFAULT_FREQUENCY;
 }
 
 void sys_systickInit(void){
-        systick_set_frequency(SYSTICK_FREQ, CPUFrequency);
+        systick_set_frequency(SYSTICK_FREQ, rcc_ahb_frequency);
         systick_counter_enable();
         systick_interrupt_enable();
 }
 
 volatile uint64_t sys_ticks = 0; 
-void systick_handler(void){
+void sys_tick_handler(void){
         sys_ticks++;
 }
 
- uint64_t sys_getTicks(void){
+uint64_t sys_getTicks(void){
         return sys_ticks;
 }

@@ -33,8 +33,7 @@ extern Serial_t serial1;
 
 void serial_enableClock(uint32_t serial_addr);
 void serial_init(Serial_t *serial);
-void serial_print(Serial_t *serial, char *msg);
-int _write(int file, char *ptr, int len);
+void serial_print(Serial_t *serial, char *msg, int len);
 // void serial_println(Serial_t serial_handle);
 // char* serial_scan(Serial_t serial_handle);
 

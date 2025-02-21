@@ -1,12 +1,14 @@
 PROJECT = binux
 BUILD_DIR = bin
 
-SHARED_DIR = ./peripherals/
+SHARED_DIR = peripherals
 CFILES =main.c
 CFILES +=peripherals/gpio.c
 CFILES +=peripherals/delay.c
 CFILES +=peripherals/clock.c
 CFILES +=peripherals/serial.c
+CFILES +=peripherals/syscalls.c
+
 
 # TODO - you will need to edit these two lines!
 DEVICE=stm32f446ret6
